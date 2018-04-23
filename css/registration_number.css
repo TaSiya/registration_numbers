@@ -1,0 +1,31 @@
+body{
+   background-color: #f4f4f4;
+   text-align: center;
+}
+header{
+   margin-top: 2em;
+   text-align: center;
+   background-color: #333;
+   color: #fff;
+   width: 80%;
+   margin: auto;
+}
+
+.container{
+   background-color: #EF0C54;
+}
+
+#rightAdd{
+   margin: 0 1em;
+}
+
+li{
+
+   display:flex;
+   width: 20%;
+   margin: auto;
+   border: 2px solid ;
+
+   border-radius: 25%;
+   background-color: silver;
+}
