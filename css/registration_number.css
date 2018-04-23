@@ -31,6 +31,10 @@ li{
    background-color: #F3E905;
 }
 
+button{
+   margin: 1em 0 ;
+}
+
 .container{
    background-color: #EF0C54;
 }
