@@ -35,6 +35,12 @@
          </div>
 
          <div class="row">
+            <div class="five columns">
+               <button type="button" name="showBtn" class='showBtn'>Show plates</button>
+            </div>
+         </div>
+
+         <div class="row">
             <div class="eight columns">
                <input type="radio" name="registrationTypeInput" class="registrationTypeInput" value="all">
                <span class="label-body" >All</span>
@@ -48,21 +54,18 @@
                 <input type="radio" name="registrationTypeInput" class="registrationTypeInput" value="CJ">
                 <span class="label-body" >Paarl</span>
 
-                <input type="radio" name="registrationTypeInput" class="registrationTypeInput" value="CK">
-                <span class="label-body" >Stellenbotsch</span>
-
                 <input type="radio" name="registrationTypeInput" class="registrationTypeInput" value="CL">
                 <span class="label-body" >George</span>
-
-                <div class="row">
-                  <div class="nine columns" id='addElements'>
-
-                  </div>
-                  <div class="three">
-                     <button type="button" name="showBtn" class='showBtn'>Show plates</button>
-                  </div>
-               </div>
             </div>
+
+            <div class="row">
+              <div class="nine columns" id='addElements'>
+                 <ul id='unordered'>
+
+                 </ul>
+              </div>
+
+           </div>
             <div class="four columns">
                <table>
                   <tr>
@@ -82,10 +85,6 @@
                      <td>CJ 123-467</td>
                   </tr>
                   <tr>
-                     <td>Stellenbotsch</td>
-                     <td>CK 123-467</td>
-                  </tr>
-                  <tr>
                      <td>George</td>
                      <td>CL 123-467</td>
                   </tr>
@@ -97,6 +96,6 @@
 
 
    </body>
-
    <script src="js/registration_number.js" charset="utf-8"></script>
+   <script src="js/registration_number-dom.js" charset="utf-8"></script>
 </html>
