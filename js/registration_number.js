@@ -25,13 +25,13 @@ showBtn.addEventListener('click', function(){
    var checkedRadioBtn = document.querySelector("input[name='registrationTypeInput']:checked");
    if (checkedRadioBtn){
       registrationTypeCheck = checkedRadioBtn.value;
-   }
-   for(key in main.map()){
-      if(key.startsWith(registrationTypeCheck)){
-         location.reload();
-         addElement(key);
+
+      if(registrationTypeCheck === 'CA'){
+        //Display Cape Town
       }
    }
+
+
 });
 
 //Function(s)
@@ -42,6 +42,10 @@ function addElement (addedReg){
   var newContent = document.createTextNode(addedReg);
   myList.appendChild(newContent);
   currentDiv.appendChild(myList);
+}
+
+function display(){
+
 }
 
 function mainRegistration(stored){
@@ -69,13 +73,14 @@ function mainRegistration(stored){
    }
 
    function getNumber(){ return numbers;}
-
    function getMap(){ return regMap;}
+   function countReg(){ return Object.keys(storedData).length; }
 
    return {
       checkRegistration : registration,
       setReg : setNumber,
       getReg : getNumber,
-      map : getMap
+      map : getMap,
+      regLength: countReg
    }
 }
