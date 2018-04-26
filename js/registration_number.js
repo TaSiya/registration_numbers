@@ -1,15 +1,13 @@
 
-function MainRegistration(stored){
+function NumberPlateRegister(stored){
    var regMap = {};
    var counted = 0 ;
    var numbers = '';
 
-   function setNumber(value){ numbers = value;}
-
-   function isStored(){
+   function setRegistrationNumber(value){ numbers = value;}
+   function arePlatesStored(){
       if(stored){
          regMap = stored;
-
          return true;
       }
       else{
@@ -18,7 +16,7 @@ function MainRegistration(stored){
    }
 
    function registration(numbers){
-      isStored();
+      arePlatesStored();
       if(numbers.startsWith('CA') || numbers.startsWith('CJ') ||
       numbers.startsWith('CK') || numbers.startsWith('CY') ||
       numbers.startsWith('CL')){
@@ -30,45 +28,39 @@ function MainRegistration(stored){
       }
 
    }
-
+   // Filtering the data if necessary.
    function radioCheck(registrationTypeCheck){
       if(registrationTypeCheck === 'CA' || registrationTypeCheck === 'CJ' || registrationTypeCheck === 'CY' || registrationTypeCheck === 'CL'){
-        //Filter the registration numbers
+         // Calling a Filtering function called filter
         filter(registrationTypeCheck);
         }
       else{
-         isStored();
-         for(key in regMap){
-               addElement(key);
-            }
-         }
+         //check if there is any data we can work with
+         if(arePlatesStored()){
+            for(key in regMap){addElement(key);}
+         }else{}
+      }
    }
 
    function filter(value){
-      if(isStored()){
+      if(arePlatesStored()){
          for(key in regMap){
-            console.log();
-            if(key.startsWith(value)){
-               addElement(key);
-            }
+            if(key.startsWith(value)){addElement(key);}
          }
       }
-
    }
-
-
-   function getNumber(){ return numbers;}
+   function getRegistrationNumber(){ return numbers;}
    function getMap(){ return regMap;}
    function countReg(){ return Object.keys(regMap).length; }
 
    return {
       checkRegistration : registration,
-      setReg : setNumber,
-      getReg : getNumber,
-      getRegMap : getMap,
+      setNumberPlate : setRegistrationNumber,
+      getNumberPlate : getRegistrationNumber,
+      getDataMap : getMap,
       regLength: countReg,
       showFiltered : filter,
       checking: radioCheck,
-      isDataStored : isStored
+      isDataStored : arePlatesStored
    }
 }

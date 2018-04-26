@@ -41,6 +41,7 @@ button:hover{
 
 .container{
    background-color: #EF0C54;
+   padding: 0 1em;
 }
 
 .registrationTypeInput{

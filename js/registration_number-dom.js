@@ -8,13 +8,13 @@ var currentDiv = document.getElementById("unordered");
 
 var stored = localStorage.getItem('numbers') ? JSON.parse(localStorage.getItem('numbers')):{};
 
-var main = MainRegistration(stored);
+var application = NumberPlateRegister(stored);
 
 //Adding Event for the Button
 addBtn.addEventListener('click', function(){
-   main.setReg(registrationInput.value);
-   main.checkRegistration(main.getReg());
-   localStorage.setItem('numbers', JSON.stringify(main.map()));
+   application.setNumberPlate(registrationInput.value);
+   application.checkRegistration(application.getNumberPlate());
+   localStorage.setItem('numbers', JSON.stringify(application.getDataMap()));
 });
 
 resetBtn.addEventListener('click', function(){
@@ -28,14 +28,13 @@ showBtn.addEventListener('click', function(){
    if (checkedRadioBtn){
       currentDiv.innerHTML = "";
       registrationTypeCheck = checkedRadioBtn.value;
-      main.checking(registrationTypeCheck);
-
+      application.checking(registrationTypeCheck);
    }
 });
 
 window.addEventListener('load', function(){
-   main.isDataStored();
-   for(key in main.getRegMap()){
+   application.isDataStored();
+   for(key in application.getDataMap()){
          addElement(key);
       }
 });
