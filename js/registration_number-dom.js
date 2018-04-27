@@ -8,12 +8,17 @@ var currentDiv = document.getElementById("unordered");
 
 var stored = localStorage.getItem('numbers') ? JSON.parse(localStorage.getItem('numbers')):{};
 
+var plate = '';
+
 var application = NumberPlateRegister(stored);
 
 //Adding Event for the Button
 addBtn.addEventListener('click', function(){
    application.setNumberPlate(registrationInput.value);
-   application.checkRegistration(application.getNumberPlate());
+   plate = application.checkRegistration(application.getNumberPlate());
+   if(plate !== ''){
+     addElement(plate);
+   }
    localStorage.setItem('numbers', JSON.stringify(application.getDataMap()));
 });
 
@@ -28,7 +33,7 @@ showBtn.addEventListener('click', function(){
    if (checkedRadioBtn){
       currentDiv.innerHTML = "";
       registrationTypeCheck = checkedRadioBtn.value;
-      application.checking(registrationTypeCheck);
+      radioCheck(registrationTypeCheck);
    }
 });
 
@@ -46,4 +51,26 @@ function addElement(addedReg){
    var newContent = document.createTextNode(addedReg);
    listItems.appendChild(newContent);
    currentDiv.appendChild(listItems);
+}
+
+// Filtering the data if necessary.
+function radioCheck(registrationTypeCheck){
+   if(registrationTypeCheck === 'CA' || registrationTypeCheck === 'CJ' || registrationTypeCheck === 'CY' || registrationTypeCheck === 'CL'){
+      // Calling a Filtering function called filter
+     filter(registrationTypeCheck);
+     }
+   else{
+      //check if there is any data we can work with
+      if(application.isDataStored()){
+         for(key in application.getDataMap()){addElement(key);}
+      }else{}
+   }
+}
+
+function filter(value){
+   if(application.isDataStored()){
+      for(key in application.getDataMap()){
+         if(key.startsWith(value)){addElement(key);}
+      }
+   }
 }
