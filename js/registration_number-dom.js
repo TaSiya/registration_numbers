@@ -4,6 +4,7 @@ var registrationTypeInput = document.querySelector('.registrationTypeInput');
 var addBtn = document.querySelector('.addBtn');
 var showBtn = document.querySelector('.showBtn');
 var resetBtn = document.querySelector('.resetBtn');
+
 var currentDiv = document.getElementById("unordered");
 
 var stored = localStorage.getItem('numbers') ? JSON.parse(localStorage.getItem('numbers')):{};
@@ -18,8 +19,9 @@ addBtn.addEventListener('click', function(){
    plate = application.checkRegistration(application.getNumberPlate());
    if(plate !== ''){
      addElement(plate);
+     localStorage.setItem('numbers', JSON.stringify(application.getDataMap()));
    }
-   localStorage.setItem('numbers', JSON.stringify(application.getDataMap()));
+   registrationInput.value = '';
 });
 
 resetBtn.addEventListener('click', function(){

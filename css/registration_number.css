@@ -53,8 +53,12 @@ button:hover{
 }
 
 #addElements{
-   width: 100%;
+  width:60%;
    margin: auto;
+}
+
+#tables{
+  float:right;
 }
 @media(min-width:400px) {
 
