@@ -49,6 +49,10 @@ button:hover{
    padding: 0 1em;
 }
 
+.registrationInput{
+   margin: 0;
+}
+
 .registrationTypeInput{
    margin: 1em;
    display: inline;
@@ -83,6 +87,9 @@ button:hover{
 
 
 @media(min-width:550px){
+   h4{
+      font-size: 2em;
+   }
    #addElements{
      width:50%;
    }
@@ -98,7 +105,7 @@ button:hover{
       text-align: center;
    }
    .showBtn{
-      text-align: center;
+
    }
 
 }
@@ -110,9 +117,6 @@ button:hover{
       text-align: left;
    }
 
-   #tables{
-      width: 100%;
-   }
  }
 
 @media(min-width:1080px) {
@@ -163,7 +167,7 @@ button:hover{
    }
 
    #radioBtns{
-      width: 67%;
+      width: 80%;
       display:grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
       text-align: left;
