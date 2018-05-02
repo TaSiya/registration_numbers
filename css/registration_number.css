@@ -44,6 +44,13 @@ button:hover{
 
 }
 
+footer{
+   background-color: #333a;
+   color: #fff;
+   margin: auto;
+   text-align: center;
+}
+
 .container{
    background-color: #EF0C54;
    padding: 0 1em;
@@ -90,6 +97,7 @@ button:hover{
    h4{
       font-size: 2em;
    }
+
    #addElements{
      width:50%;
    }
@@ -104,9 +112,7 @@ button:hover{
       grid-template-columns: 2fr 2fr;
       text-align: center;
    }
-   .showBtn{
 
-   }
 
 }
 @media (min-width:820px) {
