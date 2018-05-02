@@ -41,9 +41,7 @@ showBtn.addEventListener('click', function(){
 
 window.addEventListener('load', function(){
    application.isDataStored();
-   for(key in application.getDataMap()){
-         addElement(key);
-      }
+   display();
 });
 
 //Function(s)
@@ -64,15 +62,19 @@ function radioCheck(registrationTypeCheck){
    else{
       //check if there is any data we can work with
       if(application.isDataStored()){
-         for(key in application.getDataMap()){addElement(key);}
-      }else{}
+         display();
+      }
    }
 }
 
-function filter(value){
+function filter(location){
    if(application.isDataStored()){
       for(key in application.getDataMap()){
-         if(key.startsWith(value)){addElement(key);}
+         if(key.startsWith(location)){addElement(key);}
       }
    }
+}
+
+function display(){
+   for(key in application.getDataMap()){ addElement(key); }
 }

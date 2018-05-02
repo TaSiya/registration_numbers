@@ -2,6 +2,7 @@ body{
    background-color: #f4f4f4;
    text-align: center;
 }
+
 header{
    margin-top: 2em;
    text-align: center;
@@ -46,6 +47,22 @@ button:hover{
 
 .registrationTypeInput{
    margin: 1em;
+   display: inline;
+}
+
+.radios{
+   text-align: left;
+   width: 50%;
+   margin: auto;
+}
+
+#radioBtns{
+   display:grid;
+   grid-template-columns: 1fr 1fr;
+   text-align: left;
+}
+
+#radioBtns > div{
 }
 
 #rightAdd{
@@ -60,7 +77,76 @@ button:hover{
 #tables{
   float:right;
 }
-@media(min-width:400px) {
+@media(min-width:760px) {
+   #radioBtns{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      text-align: left;
+   }
+}
+@media(min-width:1080px) {
+   header{
+      margin-top: 2em;
+      text-align: center;
+      background-color: #333;
+      color: #fff;
+      width: 90%;
+      margin: auto;
+   }
 
+   textarea{
+      text-align: center;
+   }
 
+   textarea:hover{
+      background-color: #eee;
+      font-size: 16px;
+      font-weight: bold;
+   }
+
+   li{
+      display:block;
+      width: 40%;
+      margin-top: 1em;
+      margin-left: 3em;
+      border: 2px solid;
+      border-radius: 25%;
+      background-color: #F3E905;
+   }
+
+   button{
+      margin: 1em 0.5em ;
+   }
+
+   button:hover{
+
+   }
+
+   .container{
+      background-color: #EF0C54;
+      padding: 0 1em;
+   }
+
+   .registrationTypeInput{
+      margin: 1em;
+   }
+
+   #radioBtns{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      text-align: left;
+   }
+
+   #rightAdd{
+      margin: 0 1em;
+   }
+
+   #addElements{
+     width:60%;
+      margin: auto;
+   }
+
+   #tables{
+     float:right;
+   }
 }
