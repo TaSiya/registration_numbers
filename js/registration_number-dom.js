@@ -18,7 +18,7 @@ addBtn.addEventListener('click', function(){
    application.setNumberPlate(registrationInput.value);
    plate = application.checkRegistration(application.getNumberPlate());
    if(plate !== ''){
-     addElement(plate);
+      addElement(plate);
      localStorage.setItem('numbers', JSON.stringify(application.getDataMap()));
    }
    registrationInput.value = '';
@@ -48,11 +48,15 @@ window.addEventListener('load', function(){
 
 //Function(s)
 function addElement(addedReg){
-   // Adding the registration numbers in the html or dom
-   var listItems = document.createElement('li');
-   var newContent = document.createTextNode(addedReg);
-   listItems.appendChild(newContent);
-   currentDiv.appendChild(listItems);
+   // Adding the registration numbers in the html or
+   if(application.isDataStored()){
+      if(application.getDataMap[addedReg] === undefined){
+         var listItems = document.createElement('li');
+         var newContent = document.createTextNode(addedReg);
+         listItems.appendChild(newContent);
+         currentDiv.appendChild(listItems);
+      }
+   }
 }
 
 // Filtering the data if necessary.
