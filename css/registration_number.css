@@ -49,6 +49,8 @@ footer{
    color: #fff;
    margin: auto;
    text-align: center;
+   font-style: italic;
+   font-size: 12px;
 }
 
 .container{
@@ -90,6 +92,13 @@ footer{
 #topBtns{
    display: grid;
    grid-template-columns: 1fr 1fr;
+}
+
+#message{
+   background-color: yellow;
+   border: 2px dotted;
+   font-size: 18px;
+   font-weight: bold;
 }
 
 
