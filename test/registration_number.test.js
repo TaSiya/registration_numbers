@@ -68,16 +68,27 @@ describe('Number Plate Registration App', function(){
         var app8 = NumberPlateRegister();
         app8.setNumberPlate('CL 234');
         app8.checkRegistration(app8.getNumberPlate());
-        app8.setNumberPlate('CA 234');
+        app8.setNumberPlate('CY 134');
         app8.checkRegistration(app8.getNumberPlate());
-        app8.setNumberPlate('CY 234');
+        app8.setNumberPlate('CQ 134');
         app8.checkRegistration(app8.getNumberPlate());
-        app8.setNumberPlate('CX 234');
+        app8.setNumberPlate(' 134');
         app8.checkRegistration(app8.getNumberPlate());
-        app8.setNumberPlate('CZ 234');
+        app8.setNumberPlate('CL 134');
         app8.checkRegistration(app8.getNumberPlate());
-        
-        assert.deepEqual(app8.getDataMap(),);
+        assert.deepEqual(app8.getDataMap(),{'CL 234':0, 'CY 134':1, 'CL 134':2});
+      });
+      it('takes 4 incorrect registration plates', function(){
+         var app9 = NumberPlateRegister();
+         app9.setNumberPlate('GD 473232 SD');
+         app9.checkRegistration(app9.getNumberPlate());
+         app9.setNumberPlate('CC 840-320');
+         app9.checkRegistration(app9.getNumberPlate());
+         app9.setNumberPlate('');
+         app9.checkRegistration(app9.getNumberPlate());
+         app9.setNumberPlate('CCA 820-559');
+         app9.checkRegistration(app9.getNumberPlate());
+         assert.deepEqual(app9.getDataMap(),{});
       });
     });
 });
