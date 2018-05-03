@@ -20,38 +20,20 @@
 
       <div class="container">
          <div class="row" id='row1'>
-            <div class="five columns">
-               <h4>Registration number:</h4>
+            <div class="four columns">
+               <h5>Registration</h5>
             </div>
-            <div class="three columns">
+            <div class="eight columns">
                <form class="form1">
-                  <textarea name="userName" class='registrationInput' placeholder="registration number" rows="1" cols="20"></textarea>
+                  <input name="userName" class='registrationInput' placeholder="registration number"></input>
+                  <span><button type="button" name="addBtn" class='addBtn'>Add </button></span>
                </form>
             </div>
          </div>
-
          <div class="row">
-            <div class="twelve columns" id='message'>
-                  &rarr; @plate &larr; is incorrect. Example below &darr;
-            </div>
-         </div>
-
-         <div class="row">
-            <div class="twelve columns" id='topBtns'>
-               <div >
-                  <button type="button" name="addBtn" class='addBtn'>Add </button>
-               </div>
-               <div >
-                  <button type="button" name="resetBtn" class='resetBtn'>Reset</button>
-               </div>
-            </div>
-         </div>
-
-         <div class="row">
-            <div class="twelve columns">
-               <button type="button" name="showBtn" class='showBtn'>Show plates</button>
-            </div>
-
+            <!--<div class="twelve columns" id='message'>
+                  &rarr; @plate &larr; is incorrect. Example below &darr
+            </div> -->
          </div>
 
          <div class="row">
@@ -81,6 +63,19 @@
                   <span class="label-body" >George</span>
                </div>
             </div>
+         </div>
+
+         <div class="row">
+            <div class="seven columns">
+               <button type="button" name="showBtn" class='showBtn' title='View selected town'>Show plates</button>
+            </div>
+
+            <div class="five columns" id='topBtns'>
+               <div >
+                  <button type="button" name="resetBtn" class='resetBtn' title='delete all numbers stored'>Reset</button>
+               </div>
+            </div>
+
          </div>
             <div class="row">
               <div class="four columns" id='addElements'>
