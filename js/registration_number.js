@@ -22,10 +22,11 @@ function NumberPlateRegister(stored){
          if(regMap[numbers] === undefined){
             regMap[numbers] = counted ;
             counted ++;
+
          }
-         return numbers;
+           return numbers;
       }
-      return '';
+      else{ return ''; }
    }
 
    function getRegistrationNumber(){ return numbers;}
