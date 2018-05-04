@@ -1,7 +1,8 @@
 body{
-   background-color: #f4f4f4;
+   background-color: #333;
    text-align: center;
 }
+
 header{
    margin-top: 2em;
    text-align: center;
@@ -15,52 +16,197 @@ textarea{
    text-align: center;
 }
 
+h6{
+   background-color: red;
+}
+
 textarea:hover{
    background-color: #eee;
    font-size: 16px;
    font-weight: bold;
 }
 
+table{
+   width: 80%;
+}
+
 li{
    display:block;
-   width: 40%;
+   width: 50%;
    margin-top: 1em;
    margin-left: 3em;
-   border: 2px solid;
-   border-radius: 25%;
+   border: 1px solid;
+   border-radius: 40%;
    background-color: #F3E905;
 }
 
 button{
    margin: 1em 0.5em ;
+   background-color: #246;
+   color:#fff;
 }
 
 button:hover{
+   background-color: #eee;
+}
 
+.resetBtn:hover {
+   background-color: red;
+   color:#fff;
+}
+
+footer{
+   background-color: #333a;
+   color: #fff;
+   margin: auto;
+   text-align: center;
+   font-style: italic;
+   font-size: 12px;
 }
 
 .container{
-   background-color: #EF0C54;
+   background-color: #f4f4f4;
    padding: 0 1em;
+}
+.registrationInput{
+   text-align: center;
+   font-weight: bold;
+}
+.registrationInput:hover{
+   font-style: italic;
 }
 
 .registrationTypeInput{
    margin: 1em;
+   display: inline;
 }
 
-#rightAdd{
-   margin: 0 1em;
-}
-
-#addElements{
-  width:60%;
+.radios{
+   text-align: left;
+   width: 50%;
    margin: auto;
 }
 
-#tables{
-  float:right;
+#row1{
+   padding-top: 1em;
 }
-@media(min-width:400px) {
+
+#radioBtns{
+   display:grid;
+   grid-template-columns: 1fr 1fr;
+   background-color: pink;
+   text-align: center;
+}
+
+#addElements{
+  width:100%;
+}
+
+#message{
+   margin-bottom: 1em;
+   font-size: 15px;
+   font-weight: bold;
+}
+
+@media(min-width:550px){
+   h4{
+      font-size: 2em;
+   }
+
+   #addElements{
+     width:50%;
+   }
+   #radioBtns{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr ;
+   }
+
+   .form1{
+      width: 100%;
+      display: inline-block;
+   }
+
+   .registrationInput{
+      width:80%;
+      height: 30px;
+      text-align: center;
+      font-weight: bold;
+   }
+   .registrationInput:hover{
+      font-style: italic;
+      font-size: 15px;
+   }
+   #message{
+      font-size: 18px;
+      padding-left: 10em;
+   }
+
+}
+@media (min-width:820px) {
+
+   #radioBtns{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+   }
+   .registrationInput{
+      width: 70%;
+      height: 40px;
+   }
+
+ }
+
+@media(min-width:1080px) {
+   header{
+      margin-top: 2em;
+      text-align: center;
+      background-color: #333;
+      color: #fff;
+      width: 90%;
+      margin: auto;
+   }
+
+   textarea{
+      text-align: center;
+   }
+
+   textarea:hover{
+      background-color: #eee;
+      font-size: 16px;
+      font-weight: bold;
+   }
+
+   li{
+      display:block;
+      width: 40%;
+      margin-top: 1em;
+      margin-left: 3em;
+      border: 2px solid;
+      border-radius: 25%;
+      background-color: #F3E905;
+   }
+
+   button{
+      margin: 1em 0.5em ;
+   }
+
+   .container{
+      padding: 0 1em;
+   }
+
+   .registrationTypeInput{
+      margin: auto;
+      text-align: center;
+   }
+
+   #radioBtns{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+   }
+
+   #addElements{
+     width:50%;
+      margin: auto;
+   }
 
 
 }

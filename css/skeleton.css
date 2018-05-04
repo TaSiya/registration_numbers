@@ -46,10 +46,19 @@
   .container {
     width: 85%;
     padding: 0; }
+
+    footer{
+      width:85%;
+      padding: 0;
+   }
 }
 
 /* For devices larger than 550px */
 @media (min-width: 550px) {
+   footer{
+     width:80%;
+     padding: 0;
+  }
   .container {
     width: 80%; }
   .column,
@@ -403,7 +412,8 @@ there.
 
 
 /* Larger than mobile */
-@media (min-width: 400px) {}
+@media (min-width: 400px) {
+}
 
 /* Larger than phablet (also point when grid becomes active) */
 @media (min-width: 550px) {}
@@ -415,4 +425,4 @@ there.
 @media (min-width: 1000px) {}
 
 /* Larger than Desktop HD */
-@media (min-width: 1200px) {}
+@media (min-width: 1230px) {}

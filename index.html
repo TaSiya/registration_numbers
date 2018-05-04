@@ -8,8 +8,8 @@
       <meta name="application-name" content="Registration plates">
       <meta name="author" content="Siyanda Makhalima">
 
-      <link rel="stylesheet" href="css/registration_number.css">
       <link rel="stylesheet" href="css/skeleton.css">
+      <link rel="stylesheet" href="css/registration_number.css">
       <title>Registration plates</title>
    </head>
    <body>
@@ -21,42 +21,61 @@
       <div class="container">
          <div class="row" id='row1'>
             <div class="four columns">
-               <h4>Registration number:</h4>
+               <h5>Registration</h5>
             </div>
-            <div class="five columns">
+            <div class="eight columns">
                <form class="form1">
-                  <textarea name="userName" class='registrationInput' placeholder="registration number" rows="3" cols="30"></textarea>
+                  <input name="userName" class='registrationInput' placeholder="registration number"></input>
+                  <span><button type="button" name="addBtn" class='addBtn'>Add </button></span>
                </form>
             </div>
-            <div class="two columns">
-               <button type="button" name="addBtn" class='addBtn'>Add number</button>
-               <button type="button" name="resetBtn" class='resetBtn'>Reset data</button>
+         </div>
+         <div class="row">
+            <div class="twelve columns" id='message'>
+
             </div>
          </div>
 
          <div class="row">
-            <div class="five columns">
-               <button type="button" name="showBtn" class='showBtn'>Show plates</button>
+            <div class="twelve columns" id='radioBtns'>
+               <div>
+                  <input type="radio" name="registrationTypeInput" class="registrationTypeInput" value="all">
+                  <span class="label-body" >All</span>
+               </div>
+
+               <div>
+                  <input type="radio" name="registrationTypeInput" class="registrationTypeInput" value="CA">
+                  <span class="label-body">Cape Town</span>
+               </div>
+
+               <div>
+                  <input type="radio" name="registrationTypeInput" class="registrationTypeInput" value="CY">
+                  <span class="label-body" >Bellville</span>
+               </div>
+
+               <div>
+                  <input type="radio" name="registrationTypeInput" class="registrationTypeInput" value="CJ">
+                  <span class="label-body" >Paarl</span>
+               </div>
+
+               <div>
+                  <input type="radio" name="registrationTypeInput" class="registrationTypeInput" value="CL">
+                  <span class="label-body" >George</span>
+               </div>
             </div>
          </div>
 
          <div class="row">
-            <div class="eight columns">
-               <input type="radio" name="registrationTypeInput" class="registrationTypeInput" value="all">
-               <span class="label-body" >All</span>
-
-                <input type="radio" name="registrationTypeInput" class="registrationTypeInput" value="CA">
-                <span class="label-body">Cape Town</span>
-
-                <input type="radio" name="registrationTypeInput" class="registrationTypeInput" value="CY">
-                <span class="label-body" >Bellville</span>
-
-                <input type="radio" name="registrationTypeInput" class="registrationTypeInput" value="CJ">
-                <span class="label-body" >Paarl</span>
-
-                <input type="radio" name="registrationTypeInput" class="registrationTypeInput" value="CL">
-                <span class="label-body" >George</span>
+            <div class="seven columns">
+               <button type="button" name="showBtn" class='showBtn' title='View selected town'>Show plates</button>
             </div>
+
+            <div class="five columns" id='topBtns'>
+               <div >
+                  <button type="button" name="resetBtn" class='resetBtn' title='delete all numbers stored'>Reset</button>
+               </div>
+            </div>
+
          </div>
             <div class="row">
               <div class="four columns" id='addElements'>
@@ -90,12 +109,10 @@
               </div>
 
            </div>
-
-
-
       </div>
-
-
+      <footer>
+         Copyright &copy;2018 Siyanda Makhalima
+      </footer>
    </body>
    <script src="js/registration_number.js" charset="utf-8"></script>
    <script src="js/registration_number-dom.js" charset="utf-8"></script>
