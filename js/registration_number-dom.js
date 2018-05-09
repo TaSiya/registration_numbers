@@ -62,8 +62,9 @@ function addPlateElement(addedReg){
 // Filtering the data if necessary.
 function radioCheck(registrationTypeCheck){
    if(registrationTypeCheck === 'CA' || registrationTypeCheck === 'CJ' || registrationTypeCheck === 'CY' || registrationTypeCheck === 'CL'){
-      // Calling a Filtering function called filter
-     filter(registrationTypeCheck);
+      // Calling a Filtering function called
+     var filteredList = application.filtered(registrationTypeCheck);
+     displayFilter(filteredList);
      }
    else{
       //check if there is any data we can work with
@@ -73,11 +74,9 @@ function radioCheck(registrationTypeCheck){
    }
 }
 
-function filter(location){
-   if(application.isDataStored()){
-      for(key in application.getDataMap()){
-         if(key.startsWith(location)){addPlateElement(key);}
-      }
+function displayFilter(list){
+   for(var i = 0; i < list.length; i++){
+      addPlateElement(list[i]);
    }
 }
 
