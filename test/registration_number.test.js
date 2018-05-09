@@ -91,4 +91,52 @@ describe('Number Plate Registration App', function(){
          assert.deepEqual(app9.getDataMap(),{});
       });
     });
+    describe('Filtering the data', function(){
+      it('filter Cape Town (CA) in the data', function(){
+         var app10 = NumberPlateRegister();
+         app10.setNumberPlate('CY 845');
+         app10.checkRegistration(app10.getNumberPlate());
+         app10.setNumberPlate('CA 231');
+         app10.checkRegistration(app10.getNumberPlate());
+         app10.setNumberPlate('CY 8450');
+         app10.checkRegistration(app10.getNumberPlate());
+         app10.setNumberPlate('CL 565');
+         app10.checkRegistration(app10.getNumberPlate());
+         app10.setNumberPlate('CA 000');
+         app10.checkRegistration(app10.getNumberPlate());
+         assert.deepEqual(app10.filtered('CA'),['CA 231','CA 000']);
+      });
+      it('filter George (CL) in the date', function(){
+         var app11 = NumberPlateRegister();
+         app11.setNumberPlate('CY 999');
+         app11.checkRegistration(app11.getNumberPlate());
+         app11.setNumberPlate('CL 125');
+         app11.checkRegistration(app11.getNumberPlate());
+         app11.setNumberPlate('CA 753');
+         app11.checkRegistration(app11.getNumberPlate());
+         app11.setNumberPlate('CJ 642');
+         app11.checkRegistration(app11.getNumberPlate());
+         app11.setNumberPlate('CL 089');
+         app11.checkRegistration(app11.getNumberPlate());
+         app11.setNumberPlate('CL 485');
+         app11.checkRegistration(app11.getNumberPlate());
+         assert.deepEqual(app11.filtered('CL'),['CL 125','CL 089','CL 485'])
+      });
+      it('filter Bellville (CY) in the date', function(){
+         var app12 = NumberPlateRegister();
+         app12.setNumberPlate('CY 999');
+         app12.checkRegistration(app12.getNumberPlate());
+         app12.setNumberPlate('CY 125');
+         app12.checkRegistration(app12.getNumberPlate());
+         app12.setNumberPlate('CA 753');
+         app12.checkRegistration(app12.getNumberPlate());
+         app12.setNumberPlate('CJ 642');
+         app12.checkRegistration(app12.getNumberPlate());
+         app12.setNumberPlate('CY 089');
+         app12.checkRegistration(app12.getNumberPlate());
+         app12.setNumberPlate('CY 485');
+         app12.checkRegistration(app12.getNumberPlate());
+         assert.deepEqual(app12.filtered('CY'),['CY 999','CY 125','CY 089','CY 485'])
+      });
+   });
 });

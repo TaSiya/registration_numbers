@@ -35,15 +35,15 @@ function NumberPlateRegister(stored){
    function filter(location){
       var filterStore = [];
       var count = 0;
-      if(application.isDataStored()){
-         for(key in application.getDataMap()){
-            if(key.startsWith(location)){
-               filterStore[count] = key;
-               count ++;
-            }
+      var store = Object.keys(regMap);
+      for(let i=0; i<store.length;i++){
+         if(store[i].startsWith(location)){
+            filterStore[count] = store[i];
+            count ++;
          }
       }
-      return filterStore;
+
+   return filterStore;
    }
 
    return {
