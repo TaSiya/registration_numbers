@@ -32,12 +32,27 @@ function NumberPlateRegister(stored){
    function getMap(){ return regMap;}
    function countReg(){ return Object.keys(regMap).length; }
 
+   function filter(location){
+      var filterStore = [];
+      var count = 0;
+      if(application.isDataStored()){
+         for(key in application.getDataMap()){
+            if(key.startsWith(location)){
+               filterStore[count] = key;
+               count ++;
+            }
+         }
+      }
+      return filterStore;
+   }
+
    return {
       checkRegistration : registration,
       setNumberPlate : setRegistrationNumber,
       getNumberPlate : getRegistrationNumber,
       getDataMap : getMap,
       regLength: countReg,
-      isDataStored : arePlatesStored
+      isDataStored : arePlatesStored,
+      filtered : filter
    }
 }
