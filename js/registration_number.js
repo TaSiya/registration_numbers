@@ -4,7 +4,6 @@ function NumberPlateRegister(stored){
    var counted = 0 ;
    var numbers = '';
 
-   function setRegistrationNumber(value){ numbers = value;}
    function arePlatesStored(){
       if(stored){
          regMap = stored;
@@ -15,21 +14,21 @@ function NumberPlateRegister(stored){
       }
    }
 
-   function registration(numbers){
+   function registration(plate){
       arePlatesStored();
-      if(numbers.startsWith('CA') || numbers.startsWith('CJ') || numbers.startsWith('CY') ||
-      numbers.startsWith('CL')){
-         if(regMap[numbers] === undefined){
-            regMap[numbers] = counted ;
+      if(plate.startsWith('CA') || plate.startsWith('CJ') || plate.startsWith('CY') ||
+      plate.startsWith('CL')){
+         if(regMap[plate] === undefined){
+            regMap[plate] = counted ;
             counted ++;
 
          }
-           return numbers;
+            numbers = plate;
+           return plate;
       }
       else{ return ''; }
    }
 
-   function getRegistrationNumber(){ return numbers;}
    function getMap(){ return regMap;}
    function countReg(){ return Object.keys(regMap).length; }
 
@@ -49,8 +48,6 @@ function NumberPlateRegister(stored){
 
    return {
       checkRegistration : registration,
-      setNumberPlate : setRegistrationNumber,
-      getNumberPlate : getRegistrationNumber,
       getDataMap : getMap,
       regLength: countReg,
       isDataStored : arePlatesStored,

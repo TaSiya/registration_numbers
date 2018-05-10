@@ -33,10 +33,12 @@ table{
 li{
    display:block;
    width: 50%;
+   height: 30px;
    margin-top: 1em;
    margin-left: 3em;
    border: 1px solid;
-   border-radius: 40%;
+   box-shadow: 0 3px 5px rgba(104, 104, 104, 0.8);
+   border-radius: 8px;
    background-color: #F3E905;
 }
 
@@ -67,6 +69,7 @@ footer{
 .container{
    background-color: #f4f4f4;
    padding: 0 1em;
+   box-shadow: 2px 3px 5px rgba(0, 0, 0, 2);
 }
 .registrationInput{
    text-align: center;
@@ -180,8 +183,6 @@ footer{
       width: 40%;
       margin-top: 1em;
       margin-left: 3em;
-      border: 2px solid;
-      border-radius: 25%;
       background-color: #F3E905;
    }
 

@@ -17,8 +17,7 @@ var application = NumberPlateRegister(stored);
 //Adding Event for the Button
 addBtn.addEventListener('click', function(){
    currentDivWarning.textContent = '';
-   application.setNumberPlate(registrationInput.value);
-   plate = application.checkRegistration(application.getNumberPlate());
+   plate = application.checkRegistration(registrationInput.value);
    if(plate !== ''){
      addPlateElement(plate);
      localStorage.setItem('numbers', JSON.stringify(application.getDataMap()));
