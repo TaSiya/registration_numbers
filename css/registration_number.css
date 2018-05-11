@@ -12,6 +12,11 @@ header{
    margin: auto;
 }
 
+section{
+   display: grid;
+   grid-gap: 4rem;
+}
+
 textarea{
    text-align: center;
 }
@@ -128,6 +133,10 @@ footer{
       width: 100%;
       display: inline-block;
    }
+   .form2{
+      width: 100%;
+      display: inline-block;
+   }
 
    .registrationInput{
       width:80%;
@@ -135,7 +144,17 @@ footer{
       text-align: center;
       font-weight: bold;
    }
+   .registrationInputHandlebar{
+      width:80%;
+      height: 30px;
+      text-align: center;
+      font-weight: bold;
+   }
    .registrationInput:hover{
+      font-style: italic;
+      font-size: 15px;
+   }
+   .registrationInputHandlebar:hover{
       font-style: italic;
       font-size: 15px;
    }
@@ -166,6 +185,12 @@ footer{
       color: #fff;
       width: 90%;
       margin: auto;
+   }
+
+   section{
+      display: grid;
+      grid-template-columns: 2fr 2fr;
+      grid-gap: 4rem;
    }
 
    textarea{
@@ -207,9 +232,6 @@ footer{
    #addElements{
      width:50%;
       margin: auto;
-   }
-   #tables{
-      margin-left: 15rem;
    }
 
 

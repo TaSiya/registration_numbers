@@ -8,6 +8,11 @@
       <meta name="application-name" content="Registration plates">
       <meta name="author" content="Siyanda Makhalima">
 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+
+      <script type="text/x-template" class='registrationTemplate'>
+
+      </script>
       <link rel="stylesheet" href="css/skeleton.css">
       <link rel="stylesheet" href="css/registration_number.css">
       <title>Registration plates</title>
@@ -17,103 +22,204 @@
       <header>
          <h3>Number Plate Registration</h3>
       </header>
+      <section class="widgets">
+         <div class="old-widget">
+            <div class="container">
+               <div class="row" id='row1'>
+                  <div class="four columns">
+                     <h5>Registration</h5>
+                  </div>
+                  <div class="eight columns">
+                     <form class="form1">
+                        <input name="userName" class='registrationInput' placeholder="registration number"></input>
+                        <span><button type="button" name="addBtn" class='addBtn'>Add </button></span>
+                     </form>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="twelve columns" id='message'>
 
-      <div class="container">
-         <div class="row" id='row1'>
-            <div class="four columns">
-               <h5>Registration</h5>
-            </div>
-            <div class="eight columns">
-               <form class="form1">
-                  <input name="userName" class='registrationInput' placeholder="registration number"></input>
-                  <span><button type="button" name="addBtn" class='addBtn'>Add </button></span>
-               </form>
+                  </div>
+               </div>
+
+               <div class="row">
+                  <div class="twelve columns" id='radioBtns'>
+                     <div>
+                        <input type="radio" name="registrationTypeInput" class="registrationTypeInput" value="all">
+                        <span class="label-body" >All</span>
+                     </div>
+
+                     <div>
+                        <input type="radio" name="registrationTypeInput" class="registrationTypeInput" value="CA">
+                        <span class="label-body">Cape Town</span>
+                     </div>
+
+                     <div>
+                        <input type="radio" name="registrationTypeInput" class="registrationTypeInput" value="CY">
+                        <span class="label-body" >Bellville</span>
+                     </div>
+
+                     <div>
+                        <input type="radio" name="registrationTypeInput" class="registrationTypeInput" value="CJ">
+                        <span class="label-body" >Paarl</span>
+                     </div>
+
+                     <div>
+                        <input type="radio" name="registrationTypeInput" class="registrationTypeInput" value="CL">
+                        <span class="label-body" >George</span>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="row">
+                  <div class="seven columns">
+                     <button type="button" name="showBtn" class='showBtn' title='View selected town'>Show plates</button>
+                  </div>
+
+                  <div class="five columns" id='topBtns'>
+                     <div >
+                        <button type="button" name="resetBtn" class='resetBtn' title='delete all numbers stored'>Reset</button>
+                     </div>
+                  </div>
+
+               </div>
+
+                  <div class="row">
+                    <div class="eight columns" id='addElements'>
+                       <ul id='unordered'>
+
+                       </ul>
+                    </div>
+                    <div class="four columns" id='tables'>
+                       <table>
+                          <tr>
+                             <th>Area</th>
+                             <th>Example</th>
+                          </tr>
+                          <tr>
+                             <td>Cape Town</td>
+                             <td>CA 123-467</td>
+                          </tr>
+                          <tr>
+                             <td>Bellville</td>
+                             <td>CY 123-467</td>
+                          </tr>
+                          <tr>
+                             <td>Paarl</td>
+                             <td>CJ 123-467</td>
+                          </tr>
+                          <tr>
+                             <td>George</td>
+                             <td>CL 123-467</td>
+                          </tr>
+                       </table>
+                    </div>
+
+                 </div>
             </div>
          </div>
-         <div class="row">
-            <div class="twelve columns" id='message'>
 
+         <div class="new-widget">
+            <div class="container">
+               <div class="row" id='row1'>
+                  <div class="four columns">
+                     <h5>Registration</h5>
+                  </div>
+                  <div class="eight columns">
+                     <form class="form2">
+                        <input name="userName" class='registrationInputHandlebar' placeholder="registration number"></input>
+                        <span><button type="button" name="addBtnHandlebar" class='addBtnHandlebar'>Add </button></span>
+                     </form>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="twelve columns" id='messageHandlebar'>
+
+                  </div>
+               </div>
+
+               <div class="row">
+                  <div class="twelve columns" id='radioBtnsHandlebar'>
+                     <div>
+                        <input type="radio" name="registrationTypeInputHandlebar" class="registrationTypeInputHandlebar" value="all">
+                        <span class="label-body" >All</span>
+                     </div>
+
+                     <div>
+                        <input type="radio" name="registrationTypeInputHandlebar" class="registrationTypeInputHandlebar" value="CA">
+                        <span class="label-body">Cape Town</span>
+                     </div>
+
+                     <div>
+                        <input type="radio" name="registrationTypeInputHandlebar" class="registrationTypeInputHandlebar" value="CY">
+                        <span class="label-body" >Bellville</span>
+                     </div>
+
+                     <div>
+                        <input type="radio" name="registrationTypeInputHandlebar" class="registrationTypeInputHandlebar" value="CJ">
+                        <span class="label-body" >Paarl</span>
+                     </div>
+
+                     <div>
+                        <input type="radio" name="registrationTypeInputHandlebar" class="registrationTypeInputHandlebar" value="CL">
+                        <span class="label-body" >George</span>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="row">
+                  <div class="seven columns">
+                     <button type="button" name="showBtnHandlebar" class='showBtnHandlebar' title='View selected town'>Show plates</button>
+                  </div>
+
+                  <div class="five columns" id='topBtns'>
+                     <div >
+                        <button type="button" name="resetBtnHandlebar" class='resetBtnHandlebar' title='delete all numbers stored'>Reset</button>
+                     </div>
+                  </div>
+
+               </div>
+                  <div class="row">
+                    <div class="eight columns" id='addElements'>
+                       <ul id='unordered'>
+
+                       </ul>
+                    </div>
+                    <div class="four columns" id='tables'>
+                       <table>
+                          <tr>
+                             <th>Area</th>
+                             <th>Example</th>
+                          </tr>
+                          <tr>
+                             <td>Cape Town</td>
+                             <td>CA 123-467</td>
+                          </tr>
+                          <tr>
+                             <td>Bellville</td>
+                             <td>CY 123-467</td>
+                          </tr>
+                          <tr>
+                             <td>Paarl</td>
+                             <td>CJ 123-467</td>
+                          </tr>
+                          <tr>
+                             <td>George</td>
+                             <td>CL 123-467</td>
+                          </tr>
+                       </table>
+                    </div>
+
+                 </div>
             </div>
          </div>
+      </section>
 
-         <div class="row">
-            <div class="twelve columns" id='radioBtns'>
-               <div>
-                  <input type="radio" name="registrationTypeInput" class="registrationTypeInput" value="all">
-                  <span class="label-body" >All</span>
-               </div>
-
-               <div>
-                  <input type="radio" name="registrationTypeInput" class="registrationTypeInput" value="CA">
-                  <span class="label-body">Cape Town</span>
-               </div>
-
-               <div>
-                  <input type="radio" name="registrationTypeInput" class="registrationTypeInput" value="CY">
-                  <span class="label-body" >Bellville</span>
-               </div>
-
-               <div>
-                  <input type="radio" name="registrationTypeInput" class="registrationTypeInput" value="CJ">
-                  <span class="label-body" >Paarl</span>
-               </div>
-
-               <div>
-                  <input type="radio" name="registrationTypeInput" class="registrationTypeInput" value="CL">
-                  <span class="label-body" >George</span>
-               </div>
-            </div>
-         </div>
-
-         <div class="row">
-            <div class="seven columns">
-               <button type="button" name="showBtn" class='showBtn' title='View selected town'>Show plates</button>
-            </div>
-
-            <div class="five columns" id='topBtns'>
-               <div >
-                  <button type="button" name="resetBtn" class='resetBtn' title='delete all numbers stored'>Reset</button>
-               </div>
-            </div>
-
-         </div>
-            <div class="row">
-              <div class="eight columns" id='addElements'>
-                 <ul id='unordered'>
-
-                 </ul>
-              </div>
-              <div class="four columns" id='tables'>
-                 <table>
-                    <tr>
-                       <th>Area</th>
-                       <th>Example</th>
-                    </tr>
-                    <tr>
-                       <td>Cape Town</td>
-                       <td>CA 123-467</td>
-                    </tr>
-                    <tr>
-                       <td>Bellville</td>
-                       <td>CY 123-467</td>
-                    </tr>
-                    <tr>
-                       <td>Paarl</td>
-                       <td>CJ 123-467</td>
-                    </tr>
-                    <tr>
-                       <td>George</td>
-                       <td>CL 123-467</td>
-                    </tr>
-                 </table>
-              </div>
-
-           </div>
-      </div>
       <footer>
          Copyright &copy;2018 Siyanda Makhalima
       </footer>
    </body>
    <script src="js/registration_number.js" charset="utf-8"></script>
    <script src="js/registration_number-dom.js" charset="utf-8"></script>
+   <script src='js/handlebar.js' charset="utf-83"></script>
 </html>
