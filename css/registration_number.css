@@ -1,19 +1,30 @@
+:root{
+   /* colors */
+   --white : #fff;
+   --dark : #333;
+   /* Shodows */
+   --upShadow : 1px -2px 6px 1px rgba(0, 0, 0, 1);
+   --downShadow : 0 2px 6px 1px rgba(0, 0, 0, 0, 1);
+}
+
 body{
-   background-color: #333;
+   background-color: var(--dark);
    text-align: center;
 }
 
 header{
    margin-top: 2em;
    text-align: center;
-   background-color: #333;
-   color: #fff;
+   background-color: var(--dark);
+   color: var(--white);
    width: 90%;
    margin: auto;
+
 }
 
 section{
    display: grid;
+   grid-template-columns: 1fr;
    grid-gap: 4rem;
 }
 
@@ -21,14 +32,11 @@ textarea{
    text-align: center;
 }
 
-h6{
-   background-color: red;
-}
-
 textarea:hover{
    background-color: #eee;
    font-size: 16px;
    font-weight: bold;
+
 }
 
 table{
@@ -42,7 +50,7 @@ li{
    margin-top: 1em;
    margin-left: 3em;
    border: 1px solid;
-   box-shadow: 0 3px 5px rgba(104, 104, 104, 0.8);
+   box-shadow: var(--downShadow);
    border-radius: 8px;
    background-color: #F3E905;
 }
@@ -50,7 +58,8 @@ li{
 button{
    margin: 1em 0.5em ;
    background-color: #246;
-   color:#fff;
+   color:var(--white);
+   box-shadow: var(--upShadow);
 }
 
 button:hover{
@@ -59,12 +68,17 @@ button:hover{
 
 .resetBtn:hover {
    background-color: red;
-   color:#fff;
+   color:var(--white);
+}
+
+.resetBtnHandlebar:hover {
+   background-color: red;
+   color:var(--white);
 }
 
 footer{
-   background-color: #333a;
-   color: #fff;
+   background-color: var(--dark)a;
+   color: var(--white);
    margin: auto;
    text-align: center;
    font-style: italic;
@@ -76,30 +90,34 @@ footer{
    padding: 0 1em;
    box-shadow: 2px 3px 5px rgba(0, 0, 0, 2);
 }
+
 .registrationInput{
    text-align: center;
    font-weight: bold;
 }
-.registrationInput:hover{
-   font-style: italic;
+.registrationInputHandlebar{
+   text-align: center;
+   font-weight: bold;
 }
 
 .registrationTypeInput{
    margin: 1em;
    display: inline;
 }
-
-.radios{
-   text-align: left;
-   width: 50%;
-   margin: auto;
+.registrationTypeInputHandlebar{
+   margin: 1em;
+   display: inline;
 }
 
-#row1{
-   padding-top: 1em;
+.registrationInput:hover{
+   font-style: italic;
+}
+.registrationInputHandlebar:hover{
+   font-style: italic;
 }
 
-#radioBtns{
+
+.radioBtns{
    display:grid;
    grid-template-columns: 1fr 1fr;
    background-color: pink;
@@ -116,6 +134,12 @@ footer{
    font-weight: bold;
 }
 
+#messageHandlebar{
+   margin-bottom: 1em;
+   font-size: 15px;
+   font-weight: bold;
+}
+
 @media(min-width:550px){
    h4{
       font-size: 2em;
@@ -124,7 +148,7 @@ footer{
    #addElements{
      width:50%;
    }
-   #radioBtns{
+   .radioBtns{
       display:grid;
       grid-template-columns: 1fr 1fr 1fr ;
    }
@@ -162,11 +186,15 @@ footer{
       font-size: 18px;
       padding-left: 10em;
    }
+   #messageHandlebar{
+      font-size: 18px;
+      padding-left: 10em;
+   }
 
 }
 @media (min-width:820px) {
 
-   #radioBtns{
+   .radioBtns{
       display:grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
    }
@@ -178,19 +206,11 @@ footer{
  }
 
 @media(min-width:1080px) {
-   header{
-      margin-top: 2em;
-      text-align: center;
-      background-color: #333;
-      color: #fff;
-      width: 90%;
-      margin: auto;
-   }
 
    section{
       display: grid;
       grid-template-columns: 2fr 2fr;
-      grid-gap: 4rem;
+      grid-gap: 2rem;
    }
 
    textarea{
@@ -223,8 +243,12 @@ footer{
       margin: auto;
       text-align: center;
    }
+   .registrationTypeInputHandlebar{
+      margin: auto;
+      text-align: center;
+   }
 
-   #radioBtns{
+   .radioBtns{
       display:grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
    }
