@@ -21,7 +21,6 @@ function NumberPlateRegister(stored){
          if(regMap[plate] === undefined){
             regMap[plate] = counted ;
             counted ++;
-
          }
             numbers = plate;
            return plate;
@@ -31,6 +30,7 @@ function NumberPlateRegister(stored){
 
    function getMap(){ return regMap;}
    function countReg(){ return Object.keys(regMap).length; }
+   function listMap(){ return Object.keys(regMap);}
 
    function filter(location){
       var filterStore = [];
@@ -51,6 +51,7 @@ function NumberPlateRegister(stored){
       getDataMap : getMap,
       regLength: countReg,
       isDataStored : arePlatesStored,
-      filtered : filter
+      filtered : filter,
+      getListMap : listMap
    }
 }

@@ -10,9 +10,16 @@
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
 
-      <script type="text/x-template" class='registrationTemplate'>
-
+      <script type="text/x-template" class='messageTemplate'>
+         <div>( {{message}} ) is incorrect. See example below</div>
       </script>
+
+      <script type="text/x-template" class='displayTemplate'>
+         {{#each plates}}
+         <li>{{this}}</li>
+         {{/each}}
+      </script>
+
       <link rel="stylesheet" href="css/skeleton.css">
       <link rel="stylesheet" href="css/registration_number.css">
       <title>Registration plates</title>

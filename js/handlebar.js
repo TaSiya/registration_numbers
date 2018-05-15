@@ -1,15 +1,103 @@
 var registrationInputHandlebar = document.querySelector('.registrationInputHandlebar');
-var registrationTypeInput = document.querySelector('.registrationTypeInput');
+var registrationTypeInputHandlebar = document.querySelector('.registrationTypeInputHandlebar');
 //Button
-var addBtn = document.querySelector('.addBtn');
-var showBtn = document.querySelector('.showBtn');
-var resetBtn = document.querySelector('.resetBtn');
+var addBtnHandlebar = document.querySelector('.addBtnHandlebar');
+var showBtnHandlebar = document.querySelector('.showBtnHandlebar');
+var resetBtnHandlebar = document.querySelector('.resetBtnHandlebar');
 
-var currentDiv = document.getElementById("unordered");
-var currentDivWarning = document.getElementById('message');
+var unorderedHandlebar = document.getElementById("unorderedHandlebar");
+var messageHandlebar = document.getElementById('messageHandlebar');
 
-var stored = localStorage.getItem('numbers') ? JSON.parse(localStorage.getItem('numbers')):{};
+var messageTemplate = document.querySelector('.messageTemplate').innerHTML;
+var displayTemplate = document.querySelector('.displayTemplate').innerHTML;
 
-var plate = '';
+var storedhandlebar = localStorage.getItem('numbersHandleBar') ? JSON.parse(localStorage.getItem('numbersHandleBar')):{};
 
-var application = NumberPlateRegister(stored);
+var plateHandlebar = '';
+
+var application2 = NumberPlateRegister(storedhandlebar);
+
+var registrationCompilerMessage = Handlebars.compile(messageTemplate);
+var registrationCompilerDisplay = Handlebars.compile(displayTemplate);
+
+resetBtnHandlebar.addEventListener('click', function(){
+   localStorage.clear();
+   location.reload();
+});
+
+window.addEventListener('load', function(){
+   application2.isDataStored();
+   displayHandlebar();
+});
+
+addBtnHandlebar.addEventListener('click', function(){
+
+   plateHandlebar = application2.checkRegistration(registrationInputHandlebar.value);
+   if(plateHandlebar !== ''){
+     addPlateElementHandlebar(plateHandlebar);
+     localStorage.setItem('numbersHandleBar', JSON.stringify(application2.getDataMap()));
+   }
+   else{
+      warningHandlebar(registrationInputHandlebar.value);
+   }
+   registrationInputHandlebar.value = '';
+
+});
+
+showBtnHandlebar.addEventListener('click', function(){
+   var registrationTypeCheckHandlebar = '';
+   var checkedRadioBtnHandlebar = document.querySelector("input[name='registrationTypeInputHandlebar']:checked");
+   if (checkedRadioBtnHandlebar){
+      unorderedHandlebar.innerHTML = "";
+      registrationTypeCheckHandlebar = checkedRadioBtnHandlebar.value;
+      radioCheckHAndlebar(registrationTypeCheckHandlebar);
+   }
+});
+
+function warningHandlebar(numberPlate){
+   var data = {
+      message : numberPlate
+   }
+   var compiledPlate = registrationCompilerMessage(data);
+   messageHandlebar.innerHTML = compiledPlate;
+}
+
+function addPlateElementHandlebar(plate){
+
+   var displayPlate = {
+      plates : application2.getListMap()
+   }
+   console.log(displayPlate.plates);
+   var compiledPlate = registrationCompilerDisplay(displayPlate);
+   unorderedHandlebar.innerHTML = compiledPlate;
+}
+
+function displayHandlebar(){
+   var data = {
+      plates : application2.getListMap()
+   }
+   var compiledPlate = registrationCompilerDisplay(data);
+   unorderedHandlebar.innerHTML = compiledPlate;
+}
+
+function displayFilterHandlebar(list){
+   var dataList = {
+      plates : list
+   }
+   var compiledPlate = registrationCompilerDisplay(dataList);
+   unorderedHandlebar.innerHTML = compiledPlate;
+}
+
+function radioCheckHAndlebar(registrationTypeCheckHandlebar){
+   if(registrationTypeCheckHandlebar === 'CA' || registrationTypeCheckHandlebar === 'CJ' || registrationTypeCheckHandlebar === 'CY' || registrationTypeCheckHandlebar === 'CL'){
+      // Calling a Filtering function called
+     var filteredList = application2.filtered(registrationTypeCheckHandlebar);
+     displayFilterHandlebar(filteredList);
+     }
+   else{
+      //check if there is any data we can work with
+      if(application2.isDataStored()){
+         displayHandlebar();
+      }
+   }
+}
