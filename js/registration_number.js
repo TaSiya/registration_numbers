@@ -16,8 +16,11 @@ function NumberPlateRegister(stored){
 
    function registration(plate){
       arePlatesStored();
-      if(plate.startsWith('CA') || plate.startsWith('CJ') || plate.startsWith('CY') ||
-      plate.startsWith('CL')){
+      var temp = plate.substr(0,3);
+      console.log(plate);
+      console.log(temp);
+      temp = temp.trim();
+      if(temp == 'CA'  || temp === 'CJ' || temp === 'CY' || temp === 'CAW' ){
          if(regMap[plate] === undefined){
             regMap[plate] = counted ;
             counted ++;
@@ -35,9 +38,13 @@ function NumberPlateRegister(stored){
    function filter(location){
       var filterStore = [];
       var count = 0;
+      var temp = '';
       var store = Object.keys(regMap);
       for(let i=0; i<store.length;i++){
-         if(store[i].startsWith(location)){
+         temp = store[i].slice(0,3);
+         temp = temp.trim();
+         if(temp === location){
+
             filterStore[count] = store[i];
             count ++;
          }

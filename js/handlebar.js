@@ -50,7 +50,7 @@ showBtnHandlebar.addEventListener('click', function(){
    if (checkedRadioBtnHandlebar){
       unorderedHandlebar.innerHTML = "";
       registrationTypeCheckHandlebar = checkedRadioBtnHandlebar.value;
-      radioCheckHAndlebar(registrationTypeCheckHandlebar);
+      radioCheckHandlebar(registrationTypeCheckHandlebar);
    }
 });
 
@@ -88,14 +88,14 @@ function displayFilterHandlebar(list){
    unorderedHandlebar.innerHTML = compiledPlate;
 }
 
-function radioCheckHAndlebar(registrationTypeCheckHandlebar){
-   if(registrationTypeCheckHandlebar === 'CA' || registrationTypeCheckHandlebar === 'CJ' || registrationTypeCheckHandlebar === 'CY' || registrationTypeCheckHandlebar === 'CL'){
+function radioCheckHandlebar(registrationTypeCheckHandlebar){
+   if(registrationTypeCheckHandlebar === 'CA' || registrationTypeCheckHandlebar === 'CJ' || registrationTypeCheckHandlebar === 'CY' || registrationTypeCheckHandlebar === 'CAW'){
       // Calling a Filtering function called
      var filteredList = application2.filtered(registrationTypeCheckHandlebar);
      displayFilterHandlebar(filteredList);
      }
    else{
-      //check if there is any data we can work with
+      //this is for displaying all number plates stored.
       if(application2.isDataStored()){
          displayHandlebar();
       }

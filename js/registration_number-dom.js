@@ -60,7 +60,7 @@ function addPlateElement(addedReg){
 
 // Filtering the data if necessary.
 function radioCheck(registrationTypeCheck){
-   if(registrationTypeCheck === 'CA' || registrationTypeCheck === 'CJ' || registrationTypeCheck === 'CY' || registrationTypeCheck === 'CL'){
+   if(registrationTypeCheck === 'CA' || registrationTypeCheck === 'CJ' || registrationTypeCheck === 'CY' || registrationTypeCheck === 'CAW'){
       // Calling a Filtering function called
      var filteredList = application.filtered(registrationTypeCheck);
      displayFilter(filteredList);
