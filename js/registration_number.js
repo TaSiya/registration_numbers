@@ -17,8 +17,6 @@ function NumberPlateRegister(stored){
    function registration(plate){
       arePlatesStored();
       var temp = plate.substr(0,3);
-      console.log(plate);
-      console.log(temp);
       temp = temp.trim();
       if(temp == 'CA'  || temp === 'CJ' || temp === 'CY' || temp === 'CAW' ){
          if(regMap[plate] === undefined){
