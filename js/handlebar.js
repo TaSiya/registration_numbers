@@ -21,7 +21,7 @@ var registrationCompilerMessage = Handlebars.compile(messageTemplate);
 var registrationCompilerDisplay = Handlebars.compile(displayTemplate);
 
 resetBtnHandlebar.addEventListener('click', function(){
-   localStorage.clear();
+   localStorage.removeItem('numbersHandleBar');
    location.reload();
 });
 

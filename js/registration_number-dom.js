@@ -29,7 +29,7 @@ addBtn.addEventListener('click', function(){
 });
 
 resetBtn.addEventListener('click', function(){
-   localStorage.clear();
+   localStorage.removeItem('numbers');
    location.reload();
 });
 
