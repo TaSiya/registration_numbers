@@ -3,6 +3,7 @@ function NumberPlateRegister(stored){
    var regMap = {};
    var counted = 0 ;
    var numbers = '';
+   var flag = false;
 
    function arePlatesStored(){
       if(stored){
@@ -51,12 +52,24 @@ function NumberPlateRegister(stored){
    return filterStore;
    }
 
+   function radioCheck(value){
+      if(value === 'CA' || value === 'CJ' || value === 'CY' || value === 'CAW'){
+            flag = true;
+            return flag;
+      }
+      else{
+         flag = false;
+         return flag;
+      }
+   }
+
    return {
       checkRegistration : registration,
       getDataMap : getMap,
       regLength: countReg,
       isDataStored : arePlatesStored,
       filtered : filter,
-      getListMap : listMap
+      getListMap : listMap,
+      radioChecker : radioCheck
    }
 }

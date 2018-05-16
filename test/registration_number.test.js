@@ -94,4 +94,18 @@ describe('Number Plate Registration App', function(){
          assert.deepEqual(app12.filtered('CY'),['CY 999','CY 125','CY 089','CY 485'])
       });
    });
+   describe('checking if the city is added to the app', function(){
+      it('check if CA (Cape Town) is valid', function(){
+         var app13 = NumberPlateRegister();
+         assert.equal(app13.radioChecker('CA'), true);
+      });
+      it('check if CY (Bellville) is valid', function(){
+         var app13 = NumberPlateRegister();
+         assert.equal(app13.radioChecker('CY'), true);
+      });
+      it('check if CCN (Unknown) is valid', function(){
+         var app13 = NumberPlateRegister();
+         assert.equal(app13.radioChecker('CCN'), false);
+      });
+   });
 });

@@ -39,7 +39,16 @@ showBtn.addEventListener('click', function(){
    if (checkedRadioBtn){
       currentDiv.innerHTML = "";
       registrationTypeCheck = checkedRadioBtn.value;
-      radioCheck(registrationTypeCheck);
+      if(application.radioChecker(registrationTypeCheck)){
+         var filteredList = application.filtered(registrationTypeCheck);
+         displayFilter(filteredList);
+      }
+      else{
+         //check if there is any data we can work with
+         if(application.isDataStored()){
+            display();
+         }
+      }
    }
 });
 
@@ -56,21 +65,6 @@ function addPlateElement(addedReg){
    listItems.appendChild(newContent);
    currentDiv.appendChild(listItems);
 
-}
-
-// Filtering the data if necessary.
-function radioCheck(registrationTypeCheck){
-   if(registrationTypeCheck === 'CA' || registrationTypeCheck === 'CJ' || registrationTypeCheck === 'CY' || registrationTypeCheck === 'CAW'){
-      // Calling a Filtering function called
-     var filteredList = application.filtered(registrationTypeCheck);
-     displayFilter(filteredList);
-     }
-   else{
-      //check if there is any data we can work with
-      if(application.isDataStored()){
-         display();
-      }
-   }
 }
 
 function displayFilter(list){
