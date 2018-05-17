@@ -27,7 +27,7 @@ resetBtnHandlebar.addEventListener('click', function(){
 
 window.addEventListener('load', function(){
    application2.isDataStored();
-   displayHandlebar();
+   displayHandlebar(application2.getListMap());
 });
 
 addBtnHandlebar.addEventListener('click', function(){
@@ -50,7 +50,13 @@ showBtnHandlebar.addEventListener('click', function(){
    if (checkedRadioBtnHandlebar){
       unorderedHandlebar.innerHTML = "";
       registrationTypeCheckHandlebar = checkedRadioBtnHandlebar.value;
-      radioCheckHandlebar(registrationTypeCheckHandlebar);
+      if(registrationTypeCheckHandlebar.startsWith('all')){
+         displayHandlebar(application2.getListMap());
+      }
+      else{
+         var filteredListHandlerbar = application2.filtered(registrationTypeCheckHandlebar);
+         displayHandlebar(filteredListHandlerbar);
+      }
    }
 });
 
@@ -72,15 +78,7 @@ function addPlateElementHandlebar(plate){
    unorderedHandlebar.innerHTML = compiledPlate;
 }
 
-function displayHandlebar(){
-   var data = {
-      plates : application2.getListMap()
-   }
-   var compiledPlate = registrationCompilerDisplay(data);
-   unorderedHandlebar.innerHTML = compiledPlate;
-}
-
-function displayFilterHandlebar(list){
+function displayHandlebar(list){
    var dataList = {
       plates : list
    }

@@ -39,22 +39,19 @@ showBtn.addEventListener('click', function(){
    if (checkedRadioBtn){
       currentDiv.innerHTML = "";
       registrationTypeCheck = checkedRadioBtn.value;
-      if(application.radioChecker(registrationTypeCheck)){
-         var filteredList = application.filtered(registrationTypeCheck);
-         displayFilter(filteredList);
+      if(registrationTypeCheck.startsWith('all')){
+         display(application.getListMap());
       }
       else{
-         //check if there is any data we can work with
-         if(application.isDataStored()){
-            display();
-         }
+         var filteredList = application.filtered(registrationTypeCheck);
+         display(filteredList);
       }
    }
 });
 
 window.addEventListener('load', function(){
    application.isDataStored();
-   display();
+   display(application.getListMap());
 });
 
 //Function(s)
@@ -67,14 +64,10 @@ function addPlateElement(addedReg){
 
 }
 
-function displayFilter(list){
+function display(list){
    for(var i = 0; i < list.length; i++){
       addPlateElement(list[i]);
    }
-}
-
-function display(){
-   for(key in application.getDataMap()){ addPlateElement(key); }
 }
 
 function warning(value){

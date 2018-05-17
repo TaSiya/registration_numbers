@@ -52,17 +52,6 @@ function NumberPlateRegister(stored){
    return filterStore;
    }
 
-   function radioCheck(value){
-      if(value === 'CA' || value === 'CJ' || value === 'CY' || value === 'CAW'){
-            flag = true;
-            return flag;
-      }
-      else{
-         flag = false;
-         return flag;
-      }
-   }
-
    return {
       checkRegistration : registration,
       getDataMap : getMap,
@@ -70,6 +59,5 @@ function NumberPlateRegister(stored){
       isDataStored : arePlatesStored,
       filtered : filter,
       getListMap : listMap,
-      radioChecker : radioCheck
    }
 }
